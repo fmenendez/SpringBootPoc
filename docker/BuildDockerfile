@@ -1,0 +1,5 @@
+FROM localhost:5000/dockbase-maven
+USER root
+ADD . /src
+WORKDIR /src
+CMD sh /usr/bin/mvn deploy docker:build docker:push sonar:sonar -Dsonar.host.url=http://192.168.2.15:9091 -Duser.home=/var/maven
