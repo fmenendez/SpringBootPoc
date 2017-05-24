@@ -62,7 +62,7 @@ node ('master'){
     
     stage('Build, Test and Deploy') {
             sh("docker build -t io.thinkd.poc.springbootpoc -f docker/BuildDockerfile .")
-            sh("docker run -v /var/maven/.m2:/var/maven/.m2 -v /var/run/docker.sock:/var/run/docker.sock -e MAVEN_CONFIG=/var/maven/.m2 --network proxy io.thinkd.poc.springbootpoc")
+            sh("docker run -v /var/maven/.m2:/var/maven/.m2 -v /var/run/docker.sock:/var/run/docker.sock -e MAVEN_CONFIG=/var/maven/.m2 io.thinkd.poc.springbootpoc")
     }
 	
     notifyCircuit("", "BUILD_COMPLETE")
