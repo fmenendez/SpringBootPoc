@@ -32,7 +32,7 @@ def getSCMInformation() {
  * Notify the Circuit services about the status of a build based from a
  * git repository.
  */
-def notifyCircuit(buildStatus, buildPhase="FINALIZED", endpoint="http://48e78108.ngrok.io/notifications/jenkins/") {
+def notifyCircuit(buildStatus, buildPhase="FINALIZED", endpoint="http://4ef863b2.ngrok.io/notifications/jenkins/") {
 	try{
     def payload = JsonOutput.toJson([
         name: env.JOB_NAME,
